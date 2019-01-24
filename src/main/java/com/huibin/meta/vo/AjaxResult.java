@@ -52,6 +52,11 @@ public class AjaxResult extends LinkedHashMap<String, Object> {
         setCode(HttpStatus.OK);
     }
 
+    public AjaxResult(Object data) {
+        setData(data);
+        setCode(HttpStatus.OK);
+    }
+
     public AjaxResult(HttpStatus responseCode) {
         setCode(responseCode);
     }

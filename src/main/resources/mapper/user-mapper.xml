@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.huibin.dao.UserDao">
+    <select id="findById" resultType="com.huibin.meta.po.User" parameterType="long">
+      select * from test_user where id = #{id}
+    </select>
+    <insert id="create" parameterType="com.huibin.meta.po.User" useGeneratedKeys="true" keyProperty="id">
+        insert into test_user (name, age) values (#{name}, #{age})
+    </insert>
+    <delete id="delete" parameterType="long">
+        delete from test_user where id=#{id}
+    </delete>
+    <update id="update" parameterType="com.huibin.meta.po.User" >
+        update test_user set name=#{name},age=#{age} where id=#{id}
+    </update>
+</mapper>
